@@ -15,7 +15,7 @@ def pingtest(ip):
         print(ip, "inactive",file=out)
     out.close()
 
-def pushqueue(q):
+def loadqueue(q):
     try:
         while True:
             ip=q.get_nowait()
@@ -35,7 +35,7 @@ def main():
         threads=[]
 
         for i in range(8):
-            thr = threading.Thread(target=pushqueue, args=(q,))
+            thr = threading.Thread(target=loadqueue, args=(q,))
             thr.start()
             threads.append(thr)
 
