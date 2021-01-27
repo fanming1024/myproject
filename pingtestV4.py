@@ -44,9 +44,13 @@ def main():
 
 
 if __name__ == '__main__':
+        print("This tool is developed to check active&inactive servers in internal network to support daily business/audit.\n"
+              "Please put IP addrs into ip.txt under the folder and check out.txt for output result when the prompt closed!\n"
+              "Author: PwC US MSH Hybrid Cloud, Simon Fan\n"
+              "Contact: simon.m.fan@pwc.com")
         out= open("./out.txt", 'w')
         out.truncate()
-        print('The pingtest result:',file=out)
+        print('IP Status',file=out)
         out.close()
         main()
         out = open("./out.txt", 'r')
